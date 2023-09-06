@@ -24,7 +24,7 @@
 
         function increment_count(count_var) {
             var current_count = loadCount(count_var);
-            var new_count = current_count - 1;
+            var new_count = current_count + 1;
             updateCount(count_var, new_count);
         }
 
@@ -36,7 +36,7 @@
 
         function decrement_count(count_var) {
             var current_count = loadCount(count_var);
-            var new_count = current_count + 1;
+            var new_count = current_count - 1;
             updateCount(count_var, new_count);
         }
 
@@ -58,19 +58,22 @@
     <div>
         <h2>전대석</h2>
         <button onclick="increment_count('count1')">늦었으면 클릭</button>
-        <span id="count1">0</span>
+        <span id="count1""번 지각"></span>
+        <button onclick="increment_count('count1')">되돌리기</button>
 
     </div>
     <div>
         <h2>김광호</h2>
-        <button onclick="increment_count('count2')">늦었으면 클릭</button>
-        <span id="count2">0</span>
+        <button onclick="decrement_count('count2')">늦었으면 클릭</button>
+        <span id="count2""번 지각"></span>
+        <button onclick="increment_count('count2')">되돌리기</button>
 
     </div>
     <div>
         <h2>양승민</h2>
         <button onclick="increment_count('count3')">늦었으면 클릭</button>
-        <span id="count3">0</span>
+        <span id="count3""번 지각"></span>
+        <button onclick="increment_count('count3')">되돌리기</button>
     </div>
 </body>
 </html>
