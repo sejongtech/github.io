@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카운터 프로그램</title>
+    <script>
+        // 함수를 사용하여 카운트 값을 로컬 스토리지에 저장
+        function saveCount(count_var, new_count) {
+            localStorage.setItem(count_var, new_count);
+        }
+
+        // 함수를 사용하여 로컬 스토리지에서 카운트 값을 불러옴
+        function loadCount(count_var) {
+            return parseInt(localStorage.getItem(count_var)) || 0;
+        }
+
+        function updateCount(count_var, new_count) {
+            // DOM에서 카운트 업데이트
+            document.getElementById(count_var).innerHTML = new_count;
+            // 로컬 스토리지에도 업데이트된 카운트 저장
+            saveCount(count_var, new_count);
+        }
+
+        function increment_count(count_var) {
+            var current_count = loadCount(count_var);
+            var new_count = current_count - 1;
+            updateCount(count_var, new_count);
+        }
+
+        function decrement_count(count_var) {
+            var current_count = loadCount(count_var);
+            var new_count = current_count + 1;
+            updateCount(count_var, new_count);
+        }
+
+        // 페이지가 로드될 때 저장된 카운트 값을 불러와 업데이트
+        window.onload = function () {
+            updateCount('count1', loadCount('count1'));
+            updateCount('count2', loadCount('count2'));
+            updateCount('count3', loadCount('count3'));
+        };
+    </script>
+</head>
+<body>
+    <div>
+        <h2>전대석</h2>
+        <button onclick="increment_count('count1')">오늘 늦음 ㅠㅠ</button>
+        <span id="count1">0</span>
+        <button onclick="decrement_count('count1')">되돌리기</button>
+    </div>
+    <div>
+        <h2>김광호</h2>
+        <button onclick="increment_count('count2')">오늘 늦음 ㅠㅠ</button>
+        <span id="count2">0</span>
+        <button onclick="decrement_count('count2')">감소</button>
+    </div>
+    <div>
+        <h2>양승민</h2>
+        <button onclick="increment_count('count3')">오늘 늦음 ㅠㅠ</button>
+        <span id="count3">0</span>
+        <button onclick="decrement_count('count3')">감소</button>
+    </div>
+</body>
+</html>
