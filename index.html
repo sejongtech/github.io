@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>카운터 프로그램</title>
+    <title>미라클 모닝 지각 카운트</title>
     <script>
         // 함수를 사용하여 카운트 값을 로컬 스토리지에 저장
         function saveCount(count_var, new_count) {
@@ -28,6 +28,12 @@
             updateCount(count_var, new_count);
         }
 
+        function zero(count_var) {
+            var current_count = loadCount(count_var);
+            var new_count = 0;
+            updateCount(count_var, new_count);
+        }
+
         function decrement_count(count_var) {
             var current_count = loadCount(count_var);
             var new_count = current_count + 1;
@@ -45,21 +51,29 @@
 <body>
     <div>
         <h2>전대석</h2>
-        <button onclick="increment_count('count1')">오늘 늦음 ㅠㅠ</button>
+        <button onclick="increment_count('count1')">오늘 늦었습니다.</button>
         <span id="count1">0</span>
         <button onclick="decrement_count('count1')">되돌리기</button>
+        <span id="count1">0</span>
+        <button onclick="zero('count1')">리셋</button>
+
     </div>
     <div>
         <h2>김광호</h2>
-        <button onclick="increment_count('count2')">오늘 늦음 ㅠㅠ</button>
+        <button onclick="increment_count('count2')">오늘 늦었습니다</button>
         <span id="count2">0</span>
         <button onclick="decrement_count('count2')">감소</button>
+        <span id="count2">0</span>
+        <button onclick="zero('count1')">리셋</button>
+
     </div>
     <div>
         <h2>양승민</h2>
-        <button onclick="increment_count('count3')">오늘 늦음 ㅠㅠ</button>
+        <button onclick="increment_count('count3')">오늘 늦었습니다.</button>
         <span id="count3">0</span>
-        <button onclick="decrement_count('count3')">감소</button>
+        <button onclick="decrement_count('count3')">되돌리기</button>
+        <span id="count3">0</span>
+        <button onclick="zero('count1')">리셋</button>
     </div>
 </body>
 </html>
